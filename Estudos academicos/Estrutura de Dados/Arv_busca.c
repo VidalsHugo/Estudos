@@ -55,31 +55,28 @@ Arv* abb_retira (Arv* r, int v){
     r->esq = abb_retira(r->esq, v); 
  else if (r->info < v) 
     r->dir = abb_retira(r->dir, v); 
- else { /* achou o nó a remover */ 
- /* nó sem filhos */ 
- if (r->esq == NULL && r->dir == NULL) { 
+ else {
+  
+ if (r->esq == NULL && r->dir == NULL){ 
     free (r); 
     r = NULL; 
  } 
- /* nó só tem filho à direita */ 
- else if (r->esq == NULL) { 
+ else if (r->esq == NULL){ 
     Arv* t = r; 
     r = r->dir; 
     free (t); 
  }
- /* só tem filho à esquerda */ 
- else if (r->dir == NULL) { 
+ else if (r->dir == NULL){ 
     Arv* t = r; 
     r = r->esq; 
     free (t); 
  } 
- /* nó tem os dois filhos */ 
  else { 
     Arv* f = r->esq; 
-    while (f->dir != NULL) { 
+    while (f->dir != NULL){ 
         f = f->dir; 
  } 
-    r->info = f->info; /* troca as informações */ 
+    r->info = f->info;
     f->info = v; 
     r->esq = abb_retira(r->esq,v); 
  } 
