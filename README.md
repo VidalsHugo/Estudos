@@ -1,2 +1,2 @@
 # Estudos
-Repositório para estudos.
+💻Repositório para estudos.
