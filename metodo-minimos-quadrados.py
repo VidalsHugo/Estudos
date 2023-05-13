@@ -1,6 +1,8 @@
 
 import numpy
 
+#f = ax + b
+
 # X Y
 table = [[0.50,-2.80],
          [0.75,-0.60],
